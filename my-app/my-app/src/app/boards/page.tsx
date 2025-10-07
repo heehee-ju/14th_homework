@@ -12,8 +12,16 @@ import { useQuery } from "@apollo/client";
 import styles from "./styles.module.css";
 import { useState } from "react";
 import { usePagination } from "@/components/boards-list/pagination/hook";
+import SearchBar from "@/components/boards-list/search";
+import { useSearchBar } from "@/components/boards-list/search/hook";
 
 export default function BoardsPage() {
+  // const [page, setPage] = useState<number>(1);
+
+  // // 검색어 상태 관리
+  // const [search, setSearch] = useState("");
+  // // const [keyword, setKeyword] = useState<string>("");
+
   const { data, refetch } = useQuery(FetchBoardsDocument);
   // -> useQuery(FETCH_BOARDS)를 실행하면 객체 하나가 리턴! => 여러 속성들 중 data랑 refetch만 꺼내서 쓴거임!(구조 분해 할당)
   const { data: dataBoardsCount } = useQuery(FetchBoardsCountDocument);
@@ -31,6 +39,7 @@ export default function BoardsPage() {
   return (
     <>
       <div className={styles.boardBody}>
+        <SearchBar page={currentPage} data={data} refetch={refetch} />
         <div className={styles.boardFrame}>
           <BoardList page={currentPage} data={data} refetch={refetch} />
           <Pagination

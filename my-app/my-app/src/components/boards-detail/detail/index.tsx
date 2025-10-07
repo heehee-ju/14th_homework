@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./styles.module.css";
 import Image from "next/image";
 import { useBoardsDetail } from "./hook";
@@ -8,7 +10,7 @@ import { Tooltip } from "antd";
 import 프로필이미지 from "../assets/img.svg";
 import 링크 from "../assets/link.svg";
 import 위치 from "../assets/location.svg";
-import 해변사진 from "../assets/beach.jpg";
+
 import 비디오사진 from "../assets/video.jpg";
 import 검정하트 from "../assets/bad.svg";
 import 빨강하트 from "../assets/good.svg";
@@ -48,11 +50,35 @@ export default function BoardsDetail() {
                 <Image className={styles.위치} src={위치} alt="위치" />
               </Tooltip>
             </div>
-            <Image
-              className={styles.바디_이미지}
-              src={해변사진}
-              alt="해변사진"
-            />
+            <div className={styles.imageContainer}>
+              {data?.fetchBoard?.images?.[0] !== "" ? (
+                <img
+                  className={styles.uploadImage}
+                  src={`https://storage.googleapis.com/${data?.fetchBoard?.images?.[0]}`}
+                  alt="업로드 이미지"
+                />
+              ) : (
+                ""
+              )}
+              {data?.fetchBoard?.images?.[1] !== "" ? (
+                <img
+                  className={styles.uploadImage}
+                  src={`https://storage.googleapis.com/${data?.fetchBoard?.images?.[1]}`}
+                  alt="업로드 이미지"
+                />
+              ) : (
+                ""
+              )}
+              {data?.fetchBoard?.images?.[2] !== "" ? (
+                <img
+                  className={styles.uploadImage}
+                  src={`https://storage.googleapis.com/${data?.fetchBoard?.images?.[2]}`}
+                  alt="업로드 이미지"
+                />
+              ) : (
+                ""
+              )}
+            </div>
             <div className={styles.바디_내용}>
               {" "}
               {data?.fetchBoard?.contents}{" "}

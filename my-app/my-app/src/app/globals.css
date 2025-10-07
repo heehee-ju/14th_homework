@@ -13,7 +13,28 @@
     --foreground: #ededed;
   }
 }
-
+@layer base {
+  :where(
+      button,
+      a,
+      [role="button"],
+      input[type="button"],
+      input[type="submit"],
+      input[type="file"],
+      label,
+      .ant-btn
+    ) {
+    cursor: pointer;
+  }
+  :where(button:disabled, .ant-btn:disabled) {
+    cursor: not-allowed;
+  }
+}
+@layer utilities {
+  .clickable {
+    cursor: pointer;
+  }
+}
 * {
   box-sizing: border-box;
   padding: 0;

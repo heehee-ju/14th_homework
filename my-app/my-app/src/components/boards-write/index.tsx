@@ -10,6 +10,7 @@ import { Button, Modal } from "antd";
 
 import { useState } from "react";
 import DaumPostcodeEmbed from "react-daum-postcode";
+import { CloseCircleFilled } from "@ant-design/icons";
 
 export default function BoardsComponentWrite(
   props: IBoardsComponentWriteProps
@@ -18,29 +19,30 @@ export default function BoardsComponentWrite(
 
   const {
     data,
-    writer,
+    // 통합 state & 핸들러
+    inputs, // { writer, title, comment }
+    onChangeInputs,
+    // 개별 상태 & 핸들러(요구사항 외)
     password,
-    title,
-    contents,
-    isModalOpen,
+    onChangePassword,
     zonecode,
     address,
     addressDetail,
     youtubeUrl,
-    onChangeWriter,
-    onChangeTitle,
-    onChangePassword,
-    onChangeContents,
+    imageUrls,
+    onClickDeleteImg,
     onChangeAddressDetail,
     onChangeYoutubeUrl,
-
-    onClickSignup,
-    onClickEdit,
-
+    onChangeFile,
+    // 모달
+    isModalOpen,
     handleOk,
     handleCancel,
     handleComplete,
     onClickOpenModal,
+    //
+    onClickSignup,
+    onClickEdit,
 
     등록버튼비활성화,
   } = useBoardsComponentWrite(isEdit);
@@ -56,7 +58,7 @@ export default function BoardsComponentWrite(
               작성자 <span className={styles.required}>*</span>
             </label>
             <input
-              id="작성자"
+              id="writer"
               className={
                 isEdit
                   ? styles.게시물등록_수정플레이스홀더
@@ -65,9 +67,22 @@ export default function BoardsComponentWrite(
               disabled={isEdit ? true : false}
               type="text"
               placeholder="작성자 명을 입력해 주세요."
-              onChange={onChangeWriter}
-              defaultValue={isEdit ? : writer}
+              onChange={onChangeInputs}
+              defaultValue={
+                isEdit
+                  ? inputs.writer || data?.fetchBoard?.writer || ""
+                  : inputs.writer
+              }
             />
+            {/* //inputs.writer → 사용자가 지금 input에 입력한 값
+                  data?.fetchBoard?.writer → 서버에서 불러온 원래 작성자 값
+                  "" → 둘 다 없을 때 fallback으로 빈 문자열
+
+                  즉,
+                  사용자가 뭔가 입력했다면 그 값 보여줌
+                  아직 입력 안 했으면 DB에서 불러온 기존 작성자 보여줌
+                  그것마저 없으면 그냥 빈칸 보여줌 */}
+
             {/* <div className={styles.에러메세지_스타일}>{writererror}</div> */}
           </div>
 
@@ -99,12 +114,16 @@ export default function BoardsComponentWrite(
             제목 <span style={{ color: "red" }}>*</span>
           </label>
           <input
-            id="제목"
+            id="title"
             className={styles.게시물등록_플레이스홀더}
             type="text"
             placeholder="제목을 입력해 주세요."
-            onChange={onChangeTitle}
-            defaultValue={data?.fetchBoard.title}
+            onChange={onChangeInputs}
+            value={
+              isEdit
+                ? inputs.title || data?.fetchBoard?.title || ""
+                : inputs.title
+            }
           />
           {/* <div className={styles.에러메세지_스타일}>{titleerror}</div> */}
         </div>
@@ -114,11 +133,15 @@ export default function BoardsComponentWrite(
             내용 <span style={{ color: "red" }}>*</span>
           </label>
           <textarea
-            id="내용"
+            id="content"
             className={styles.게시물등록_플레이스홀더_내용}
             placeholder="내용을 입력해 주세요."
-            onChange={onChangeContents}
-            defaultValue={data?.fetchBoard.contents}
+            onChange={onChangeInputs}
+            value={
+              isEdit
+                ? inputs.content || data?.fetchBoard?.contents || ""
+                : inputs.content
+            }
           />
           {/* <div className={styles.에러메세지_스타일}>{contenterror}</div> */}
         </div>
@@ -133,7 +156,8 @@ export default function BoardsComponentWrite(
                 className={styles.게시물등록_주소인풋_플레이스홀더}
                 type="text"
                 placeholder="01234"
-                value={zonecode || data?.fetchBoard.boardAddress.zipcode || ""}
+                value={zonecode || data?.fetchBoard.boardAddress?.zipcode || ""}
+                readOnly
               />
               <button
                 className={styles.게시물등록_주소인풋_우편번호버튼}
@@ -148,14 +172,17 @@ export default function BoardsComponentWrite(
             className={styles.게시물등록_플레이스홀더}
             type="text"
             placeholder="주소를 입력해 주세요."
-            value={address || data?.fetchBoard.boardAddress.address || ""}
+            value={address || data?.fetchBoard.boardAddress?.address || ""}
+            readOnly
           />
           <input
             className={styles.게시물등록_플레이스홀더}
             type="text"
             placeholder="상세주소"
             defaultValue={
-              addressDetail || data?.fetchBoard.boardAddress.addressDetail || ""
+              addressDetail ||
+              data?.fetchBoard.boardAddress?.addressDetail ||
+              ""
             }
             onChange={onChangeAddressDetail}
           />
@@ -172,7 +199,8 @@ export default function BoardsComponentWrite(
             className={styles.게시물등록_플레이스홀더}
             type="text"
             placeholder="링크를 입력해 주세요"
-            defaultValue={data?.fetchBoard.youtubeUrl ?? ""}
+            value={youtubeUrl || data?.fetchBoard?.youtubeUrl || ""}
+            // value={data?.fetchBoard.youtubeUrl ?? ""}는 onChange로 youtubeUrl state를 바꿔도, 화면 value는 계속 data 값이라 타이핑이 안 먹음
             onChange={onChangeYoutubeUrl}
           />
         </div>
@@ -184,23 +212,84 @@ export default function BoardsComponentWrite(
           <div className={styles.게시물등록_사진첨부}>
             <label>
               <div className={styles.게시물등록_사진첨부_박스}>
-                <Image src={addIcon} alt={addIcon} />
-                <p>클릭해서 사진 업로드</p>
-                <input type="file" />
+                <input
+                  style={{ display: "none" }}
+                  type="file"
+                  onChange={onChangeFile(0)}
+                />
+                {imageUrls[0] !== "" ? (
+                  <div>
+                    <img
+                      className={styles.uploadImage}
+                      src={`https://storage.googleapis.com/${imageUrls[0]}`}
+                      alt="업로드 이미지"
+                    />
+                    <CloseCircleFilled
+                      className={styles.closeIcon}
+                      onClick={onClickDeleteImg(0)}
+                    />
+                  </div>
+                ) : (
+                  <div className={styles.plusIcon}>
+                    <Image src={addIcon} alt="addIcon" />
+                    <p>클릭해서 사진 업로드</p>
+                  </div>
+                )}
+              </div>
+              {/* <img src={`https://storage.googleapis.com/${imageUrls}`} /> */}
+            </label>
+            <label>
+              <div className={styles.게시물등록_사진첨부_박스}>
+                <input
+                  style={{ display: "none" }}
+                  type="file"
+                  onChange={onChangeFile(1)}
+                />
+                {imageUrls[1] !== "" ? (
+                  <div>
+                    <img
+                      className={styles.uploadImage}
+                      src={`https://storage.googleapis.com/${imageUrls[1]}`}
+                      alt="업로드 이미지"
+                    />
+                    <CloseCircleFilled
+                      className={styles.closeIcon}
+                      onClick={onClickDeleteImg(1)}
+                    />
+                  </div>
+                ) : (
+                  <div className={styles.plusIcon}>
+                    <Image src={addIcon} alt="addIcon" />
+                    <p>클릭해서 사진 업로드</p>
+                  </div>
+                )}
               </div>
             </label>
             <label>
               <div className={styles.게시물등록_사진첨부_박스}>
-                <Image src={addIcon} alt={addIcon} />
-                <p>클릭해서 사진 업로드</p>
-                <input type="file" />
-              </div>
-            </label>
-            <label>
-              <div className={styles.게시물등록_사진첨부_박스}>
-                <Image src={addIcon} alt={addIcon} />
-                <p>클릭해서 사진 업로드</p>
-                <input type="file" />
+                <input
+                  style={{ display: "none" }}
+                  type="file"
+                  onChange={onChangeFile(2)}
+                />
+                {imageUrls[2] !== "" ? (
+                  <div>
+                    <img
+                      className={styles.uploadImage}
+                      src={`https://storage.googleapis.com/${imageUrls[2]}`}
+                      alt="업로드 이미지"
+                    />
+                    <CloseCircleFilled
+                      className={styles.closeIcon}
+                      onClick={onClickDeleteImg(2)}
+                    />
+                  </div>
+                ) : (
+                  <div className={styles.plusIcon}>
+                    <Image src={addIcon} alt="addIcon" />
+                    <p>클릭해서 사진 업로드</p>
+                  </div>
+                )}
               </div>
             </label>
           </div>
@@ -218,7 +307,7 @@ export default function BoardsComponentWrite(
         </div>
       </div>
       <Modal
-        title="Basic Modal"
+        title="우편번호 검색"
         closable={{ "aria-label": "Custom Close Button" }}
         open={isModalOpen}
         onOk={handleOk}

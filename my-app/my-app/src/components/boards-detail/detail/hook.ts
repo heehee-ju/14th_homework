@@ -18,6 +18,7 @@ export const useBoardsDetail = () => {
     router.push(`/boards/${data?.fetchBoard._id}/edit`);
   };
 
+  console.log(data?.fetchBoard?.images);
   return {
     data,
     onClickEdit,

@@ -1,7 +1,7 @@
 import { Exact, FetchBoardsQuery, InputMaybe } from "@/commons/gql/graphql";
 import { ApolloQueryResult } from "@apollo/client";
 import { FetchBoardsQueryVariables } from "@/commons/gql/graphql";
-export interface IBoardList {
+export interface ISearchBar {
   data: FetchBoardsQuery | undefined;
   page: number;
   search?: string;

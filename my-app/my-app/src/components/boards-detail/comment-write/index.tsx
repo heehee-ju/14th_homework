@@ -6,7 +6,6 @@ import styles from "./styles.module.css";
 import { useCommentWrite } from "./hook";
 import { Modal, Rate } from "antd";
 import { ICommentWrite } from "./types";
-import { Content } from "antd/es/layout/layout";
 
 export default function CommentWrite({ isEdit, el }) {
   const {
@@ -50,8 +49,7 @@ export default function CommentWrite({ isEdit, el }) {
                 className={isEdit ? styles.inputEdit : styles.inputWrite}
                 type="text"
                 placeholder="작성자 명을 입력해주세요."
-                // value={writer}
-                defaultValue={isEdit ? el?.writer : writer}
+                value={writer}
                 disabled={isEdit}
                 onChange={onChangeWriter}
               />
@@ -72,8 +70,7 @@ export default function CommentWrite({ isEdit, el }) {
           <textarea
             className={styles.commentInput}
             placeholder="댓글을 입력해 주세요."
-            // value={comment}
-            defaultValue={isEdit ? el?.contents : comment}
+            value={comment}
             onChange={onChangeComment}
           />
           <div>
@@ -88,7 +85,7 @@ export default function CommentWrite({ isEdit, el }) {
               className={
                 isEdit ? styles.commentEditButton : styles.commentWriteButton
               }
-              onClick={handleOk}
+              onClick={isEdit ? onClickEditComment : onClickComment}
               disabled={등록버튼비활성화}
             >
               {isEdit ? "수정하기" : "댓글등록"}

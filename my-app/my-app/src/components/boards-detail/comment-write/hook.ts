@@ -22,10 +22,10 @@ export const useCommentWrite = (
   const [createBoardComment] = useMutation(CreateBoardCommentDocument);
   const [updateBoardComment] = useMutation(UpdateBoardCommentDocument);
 
-  const [writer, setWriter] = useState("");
+  const [writer, setWriter] = useState(el?.writer ?? "");
   const [password, setPassword] = useState("");
-  const [comment, setComment] = useState("");
-  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState(el?.contents ?? "");
+  const [rating, setRating] = useState(el?.rating ?? 0);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
@@ -51,27 +51,32 @@ export const useCommentWrite = (
   };
 
   const onClickComment = () => {
-    setIsModalOpen(false);
+    setIsModalOpen(true);
+    setModalContent("댓글 등록이 완료 되었습니다!");
   };
 
   const onClickEditComment = () => {
-    setIsModalOpen(false);
+    setIsModalOpen(true);
+    setModalContent("댓글 수정이 완료 되었습니다");
   };
 
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  const boardId = params.boardId.toString();
 
   const 등록버튼비활성화 = !writer || !password || !comment;
 
   const handleOk = async () => {
     try {
-      const refetch = [
+      const myRefetch = [
         {
           query: FetchBoardCommentsDocument,
           variables: { page: 1, boardId: params.boardId.toString() },
         },
       ];
+      ////업데이트
+
       if (el) {
         const { data } = await updateBoardComment({
           variables: {
@@ -79,18 +84,24 @@ export const useCommentWrite = (
             password: password,
             boardCommentId: el._id,
           },
-          refetchQueries: refetch,
+          refetchQueries: [
+            {
+              query: FetchBoardCommentsDocument,
+              variables: { boardId },
+            },
+          ],
         });
 
         if (data?.updateBoardComment?._id) {
-          setModalContent("댓글 수정이 완료 되었습니다");
-          setIsModalOpen(true);
+          setIsModalOpen(false);
         } else {
           setModalContent("댓글 수정에 실패하였습니다");
           setIsModalOpen(true);
         }
-      } else {
-        const { data } = await createBoardComment({
+      }
+      ///등록
+      else {
+        const { data: createData } = await createBoardComment({
           // 위에 애랑 밑에 두개랑 같은거. 밑에 애들을 짧게 구조분해한거.
           // const result = await newComment(...);
           // const data = result.data;
@@ -104,12 +115,16 @@ export const useCommentWrite = (
             },
             boardId: params.boardId.toString(),
           },
-          refetchQueries: refetch,
+          refetchQueries: [
+            {
+              query: FetchBoardCommentsDocument,
+              variables: { boardId },
+            },
+          ],
         });
 
-        if (data?.createBoardComment?._id) {
-          setModalContent("댓글 등록이 완료 되었습니다!");
-          setIsModalOpen(true);
+        if (createData?.createBoardComment?._id) {
+          setIsModalOpen(false);
           // modal 창 뜬 후에 input들 초기화 형태로 만들어주기
           setWriter("");
           setPassword("");
@@ -117,7 +132,7 @@ export const useCommentWrite = (
           setRating(0);
         } else {
           setModalContent("댓글 등록에 실패하였습니다");
-          setIsModalOpen(true);
+          setIsModalOpen(false);
         }
       }
     } catch (err: any) {
