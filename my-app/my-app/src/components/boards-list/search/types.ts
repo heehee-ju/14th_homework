@@ -5,6 +5,7 @@ export interface ISearchBar {
   data: FetchBoardsQuery | undefined;
   page: number;
   search?: string;
+  setSearch: (v: string) => void;
   refetch: (
     variables?: Partial<FetchBoardsQueryVariables>
   ) => Promise<ApolloQueryResult<FetchBoardsQuery>>;

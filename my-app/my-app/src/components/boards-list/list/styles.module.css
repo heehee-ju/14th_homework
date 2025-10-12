@@ -106,14 +106,19 @@
   height: 1.25rem;
   justify-content: flex-start;
   /* align-items: center; */
-  gap: 0.625rem;
+  /* gap: 100px; */
 
   overflow: hidden;
-  color: var(--Gray-90, #1c1c1c);
+  /* color: var(--Gray-90, #1c1c1c); */
 
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem; /* 142.857% */
+}
+.FetchBoard_title span {
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 .FetchBoard_writer {

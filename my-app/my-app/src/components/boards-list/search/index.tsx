@@ -2,31 +2,43 @@
 
 import { useState } from "react";
 import { ISearchBar } from "./types";
+import { DatePicker, Space } from "antd";
+import { useSearchBar } from "./hook";
+import styles from "./styles.module.css";
 
-// 검색어 gql_게시글을 검색어와 페이지 번호에 따라 가져옴.
+import Image from "next/image";
+import searchIcon from "./assets/search.svg";
+import writeIcon from "./assets/write.svg";
 
 export default function SearchBar(props: ISearchBar) {
-  // 검색어 상태 관리
-  const [search, setSearch] = useState("");
-  // const [keyword, setKeyword] = useState<string>("");
+  const { RangePicker } = DatePicker;
 
-  const onChangeSearch = (event: any) => {
-    setSearch(event.currentTarget.value);
-  };
-
+  const { onChangeSearch, onClickWrite } = useSearchBar(props);
   // 검색 버튼을 클릭했을 때, 검색어와 페이지 1로 refetch
-  const onClickSearch = () => {
-    props.refetch({ search, page: 1 });
-  };
+
   return (
     <>
-      <div>
-        <input
-          type="text"
-          placeholder="제목을 입력하세요"
-          onChange={onChangeSearch}
+      <div className={styles.searchBarFrame}>
+        <RangePicker
+          className={styles.datePicker}
+          placeholder={["YYYY.MM.DD", "YYYY.MM.DD"]}
+          style={{ width: 300, height: 50 }}
         />
-        <button onClick={onClickSearch}>검색</button>
+        <div className={styles.keywordBar}>
+          <Image src={searchIcon} alt="searchIcon" />
+          <input
+            className={styles.keywordBarInput}
+            type="text"
+            placeholder="제목을 입력하세요"
+            onChange={onChangeSearch}
+            // onFocus={onFocusInput}
+          />
+        </div>
+        <button className={styles.searchButton}>검색</button>
+        <button className={styles.writeButton} onClick={onClickWrite}>
+          <Image src={writeIcon} alt="writeIcon" />
+          트립토크 등록
+        </button>
       </div>
     </>
   );

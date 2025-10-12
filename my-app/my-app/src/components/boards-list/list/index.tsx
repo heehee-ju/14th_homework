@@ -34,16 +34,25 @@ export default function BoardList(props: IBoardList) {
                   <div className={styles.FetchBoard_number}>
                     {index + 1 + (props.page - 1) * 10}
                   </div>
-                  {props.search ? (
-                    <div className={styles.FetchBoard_title}>
-                      {el.title.replaceAll(
-                        props.search,
-                        `@#$${props.search}@#$`
-                      )}
-                    </div>
-                  ) : (
-                    <div className={styles.FetchBoard_title}>{el.title}</div>
-                  )}
+
+                  <span className={styles.FetchBoard_title}>
+                    {props.search?.trim()
+                      ? el.title
+                          .replaceAll(props.search, `#$%${props.search}#$%`)
+                          .split("#$%")
+                          .map((el, index) => (
+                            <span
+                              key={`${el}_${index}`}
+                              style={{
+                                color: el === props.search ? "red" : "black",
+                              }}
+                            >
+                              {el}
+                            </span>
+                          ))
+                      : el.title}
+                  </span>
+
                   <div className={styles.FetchBoard_writer}>{el.writer}</div>
                   <div className={styles.FetchBoard_date}>
                     {el.createdAt.split("T")[0]}

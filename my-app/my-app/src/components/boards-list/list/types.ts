@@ -4,7 +4,7 @@ import { FetchBoardsQueryVariables } from "@/commons/gql/graphql";
 export interface IBoardList {
   data: FetchBoardsQuery | undefined;
   page: number;
-  search?: string;
+  search: string;
   refetch: (
     variables?: Partial<FetchBoardsQueryVariables>
   ) => Promise<ApolloQueryResult<FetchBoardsQuery>>;

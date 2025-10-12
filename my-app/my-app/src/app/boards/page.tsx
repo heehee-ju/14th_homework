@@ -21,6 +21,7 @@ export default function BoardsPage() {
   // // 검색어 상태 관리
   // const [search, setSearch] = useState("");
   // // const [keyword, setKeyword] = useState<string>("");
+  const [search, setSearch] = useState("");
 
   const { data, refetch } = useQuery(FetchBoardsDocument);
   // -> useQuery(FETCH_BOARDS)를 실행하면 객체 하나가 리턴! => 여러 속성들 중 data랑 refetch만 꺼내서 쓴거임!(구조 분해 할당)
@@ -39,15 +40,29 @@ export default function BoardsPage() {
   return (
     <>
       <div className={styles.boardBody}>
-        <SearchBar page={currentPage} data={data} refetch={refetch} />
-        <div className={styles.boardFrame}>
-          <BoardList page={currentPage} data={data} refetch={refetch} />
-          <Pagination
+        <div className={styles.boardContainer}>
+          <p className={styles.headerTitle}>트립토크 게시판</p>
+          <SearchBar
+            search={search}
+            setSearch={setSearch}
             page={currentPage}
             data={data}
             refetch={refetch}
-            lastPage={lastPage}
           />
+          <div className={styles.boardFrame}>
+            <BoardList
+              search={search}
+              page={currentPage}
+              data={data}
+              refetch={refetch}
+            />
+            <Pagination
+              page={currentPage}
+              data={data}
+              refetch={refetch}
+              lastPage={lastPage}
+            />
+          </div>
         </div>
       </div>
     </>
