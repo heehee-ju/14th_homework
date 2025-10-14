@@ -1,4 +1,16 @@
 {
+  "console": {
+    "prefix": "console",
+    "description": "console",
+    "scope": "typescriptreact",
+    "body": ["console.log()"]
+  },
+  "<hr/ >": {
+    "prefix": "<hr/ >",
+    "description": "<hr/ >",
+    "scope": "typescriptreact",
+    "body": ["<hr />"]
+  },
   "className={styles.}": {
     "prefix": "className={styles.}",
     "description": "className={styles.}",
