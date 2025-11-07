@@ -322,6 +322,7 @@
   border: 1px solid #f2f2f2;
   border-radius: 8px;
   align-items: center;
+  position: relative;
 }
 
 .tableCell {
@@ -366,4 +367,27 @@
 .productStatus {
   color: #2974e5;
   font-weight: 700;
+}
+
+.deleteIcon {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.deleteIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tableRow:hover .deleteIcon {
+  display: flex;
 }

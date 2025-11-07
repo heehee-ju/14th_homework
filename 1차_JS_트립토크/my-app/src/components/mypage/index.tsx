@@ -92,6 +92,9 @@ export default function Mypage() {
             </div>
             <div className={styles.tableCell}>326,000원</div>
             <div className={styles.tableCell}>2024.12.16</div>
+            <div className={styles.deleteIcon}>
+              <img src="/icons/delete@2x.png" alt="delete" />
+            </div>
           </div>
           <div className={styles.tableRow}>
             <div className={styles.tableCell}>243</div>
@@ -101,6 +104,9 @@ export default function Mypage() {
             </div>
             <div className={styles.tableCell}>326,000원</div>
             <div className={styles.tableCell}>2024.12.16</div>
+            <div className={styles.deleteIcon}>
+              <img src="/icons/delete@2x.png" alt="delete" />
+            </div>
           </div>
           <div className={styles.tableRow}>
             <div className={styles.tableCell}>243</div>
@@ -110,6 +116,9 @@ export default function Mypage() {
             </div>
             <div className={styles.tableCell}>326,000원</div>
             <div className={styles.tableCell}>2024.12.16</div>
+            <div className={styles.deleteIcon}>
+              <img src="/icons/delete@2x.png" alt="delete" />
+            </div>
           </div>
           <div className={styles.tableRow}>
             <div className={styles.tableCell}>243</div>
@@ -119,6 +128,9 @@ export default function Mypage() {
             </div>
             <div className={styles.tableCell}>326,000원</div>
             <div className={styles.tableCell}>2024.12.16</div>
+            <div className={styles.deleteIcon}>
+              <img src="/icons/delete@2x.png" alt="delete" />
+            </div>
           </div>
           <div className={styles.tableRow}>
             <div className={styles.tableCell}>243</div>
@@ -128,6 +140,9 @@ export default function Mypage() {
             </div>
             <div className={styles.tableCell}>326,000원</div>
             <div className={styles.tableCell}>2024.12.16</div>
+            <div className={styles.deleteIcon}>
+              <img src="/icons/delete@2x.png" alt="delete" />
+            </div>
           </div>
           <div className={styles.tableRow}>
             <div className={styles.tableCell}>243</div>
@@ -137,6 +152,9 @@ export default function Mypage() {
             </div>
             <div className={styles.tableCell}>326,000원</div>
             <div className={styles.tableCell}>2024.12.16</div>
+            <div className={styles.deleteIcon}>
+              <img src="/icons/delete@2x.png" alt="delete" />
+            </div>
           </div>
           <div className={styles.tableRow}>
             <div className={styles.tableCell}>243</div>
@@ -146,6 +164,9 @@ export default function Mypage() {
             </div>
             <div className={styles.tableCell}>326,000원</div>
             <div className={styles.tableCell}>2024.12.16</div>
+            <div className={styles.deleteIcon}>
+              <img src="/icons/delete@2x.png" alt="delete" />
+            </div>
           </div>
           <div className={styles.tableRow}>
             <div className={styles.tableCell}>243</div>
@@ -155,6 +176,9 @@ export default function Mypage() {
             </div>
             <div className={styles.tableCell}>326,000원</div>
             <div className={styles.tableCell}>2024.12.16</div>
+            <div className={styles.deleteIcon}>
+              <img src="/icons/delete@2x.png" alt="delete" />
+            </div>
           </div>
           <div className={styles.tableRow}>
             <div className={styles.tableCell}>243</div>
@@ -164,6 +188,9 @@ export default function Mypage() {
             </div>
             <div className={styles.tableCell}>326,000원</div>
             <div className={styles.tableCell}>2024.12.16</div>
+            <div className={styles.deleteIcon}>
+              <img src="/icons/delete@2x.png" alt="delete" />
+            </div>
           </div>
           <div className={styles.tableRow}>
             <div className={styles.tableCell}>243</div>
@@ -173,6 +200,9 @@ export default function Mypage() {
             </div>
             <div className={styles.tableCell}>326,000원</div>
             <div className={styles.tableCell}>2024.12.16</div>
+            <div className={styles.deleteIcon}>
+              <img src="/icons/delete@2x.png" alt="delete" />
+            </div>
           </div>
         </div>
       </div>
