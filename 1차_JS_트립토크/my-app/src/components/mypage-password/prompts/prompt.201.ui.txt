@@ -10,16 +10,16 @@
 
 ==============================================
 
-조건-피그마) 활용할MCP: CursorTalkToFigmaMCP(채널명: lgq6xec7)
+조건-피그마) 활용할MCP: CursorTalkToFigmaMCP(채널명: ir0zrw0t)
 
 조건-피그마) 구현될 컴포넌트 노드ID(title 영역): 285:31031
 조건-피그마) 구현될 컴포넌트 노드ID(userInfo 영역): 285:31035
 조건-피그마) 구현될 컴포넌트 노드ID(buttonTabs 영역): 285:31168
-조건-피그마) 구현될 컴포넌트 노드ID(searchbar 영역): 285:31040
-조건-피그마) 구현될 컴포넌트 노드ID(productList 영역): 285:31043
+조건-피그마) 구현될 컴포넌트 노드ID(productList 영역): 285:31173
+조건-피그마) 구현될 컴포넌트 노드ID(productList 내 pagination 영역): 285:31275
 
-조건-파일경로) 구현될 TSX 파일경로: src/components/mypage/index.tsx
-조건-파일경로) 구현될 CSS 파일경로: src/components/mypage/styles.module.css
+조건-파일경로) 구현될 TSX 파일경로: src/components/mypage-password/index.tsx
+조건-파일경로) 구현될 CSS 파일경로: src/components/mypage-password/styles.module.css
 
 ==============================================
 
@@ -33,25 +33,17 @@
 
 ==============================================
 
-기존히스토리-참고만) MCP를 연동하여 피그마의 디자인을 그대로 와이어프레임의 title, userInfo, buttonTabs, searchbar, productList 영역에 그대로 소스코드로 구현할 것.
+기존히스토리-참고만) MCP를 연동하여 위치, 색, 폰트, 폰트 굵기 등 피그마의 디자인을 그대로 와이어프레임의 title, userInfo, buttonTabs, productList 영역에 그대로 소스코드로 구현할 것.
 
 기존히스토리-참고만) buttonTabs영역은 <button>태그 사용할 것.
 
-기존히스토리-참고만) searchbar영역은 <input>, <button>태그 사용할 것.
+기존히스토리-참고만) pagination 영역은 productList의 자식으로 들어가게 구현할 것. 
 
 ==============================================
 
-기존히스토리-참고만)userInfoTab에서 "포인트 사용 내역"과 "비밀번호 변경"의 배경 색상이 피그마와 차이가 있으니 수정할 것.
+핵심요구사항) pagination에 들어있는 아이콘이 피그마 디자인과 다른 아이콘이 들어가있음. 수정할 것.
 
-기존히스토리-참고만)searchbar안에 자식 요소들이 오른쪽 끝에 정렬되도록 수정할 것.
+핵심요구사항) 피그마에서 구현된 pagination의 아이콘과 숫자의 gap은 8px이고, 숫자와 숫자 사이의 gap은 16px임. 피그마 디자인과 같게 수정할 것.
 
-기존히스토리-참고만) profileImg, pointIcon, searchInputWrapper내에 이미지가 누락됨. my-app/public/icons에 있는 맞는 이미지를 사용하여 수정할 것.
 
-==============================================
-
-기존히스토리-참고만) userInfoTabs 맨 오른쪽에 아이콘이 없어. my-app/public/icons에 있는 맞는 이미지를 사용하여 수정할 것.
-
-==============================================
-
-핵심요구사항) tableRow에 hover 효과 사용하여 마우스를 올리면 my-app/public/icons에 있는 delete@2x.png 아이콘이 피그마와 같은 위치에 보일 수 있도록 수정할 것.
         
