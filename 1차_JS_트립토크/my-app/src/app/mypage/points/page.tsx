@@ -1,5 +1,4 @@
-'use client';
-
 export default function PointsPage() {
-  return <></>;
+  return <div>포인트 페이지</div>;
 }
+
