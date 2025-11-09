@@ -25,7 +25,12 @@
 }
 
 .titleText {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
@@ -50,7 +55,12 @@
 }
 
 .userInfoHeader {
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -84,7 +94,12 @@
 }
 
 .profileName {
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -126,7 +141,12 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -148,7 +168,12 @@
   border-radius: 8px;
   padding: 8px 12px;
   box-sizing: border-box;
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -180,7 +205,12 @@
 }
 
 .changePasswordTitle {
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -211,7 +241,12 @@
 }
 
 .labelText {
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -221,7 +256,12 @@
 }
 
 .required {
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -242,7 +282,12 @@
   background-color: #ffffff;
   border: 1px solid #d4d3d3;
   border-radius: 8px;
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -267,7 +312,12 @@
   background-color: #c7c7c7;
   border: none;
   border-radius: 8px;
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui,
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
     sans-serif;
   font-style: normal;
   font-weight: 600;

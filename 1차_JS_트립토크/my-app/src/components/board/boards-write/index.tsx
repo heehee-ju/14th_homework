@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "./style.module.css";
 import { useBoardsComponentWrite } from "./hook";
 import { IBoardsComponentWriteProps } from "./types";
-import addIcon from "../../app/boards/new/assets/add.svg";
+import addIcon from "../../../app/boards/new/assets/add.svg";
 import { Button, Modal } from "antd";
 
 import { useState } from "react";

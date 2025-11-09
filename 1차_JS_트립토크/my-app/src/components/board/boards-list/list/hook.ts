@@ -2,7 +2,7 @@ import { useRouter } from "next/navigation";
 import {
   DeleteBoardDocument,
   FetchBoardsDocument,
-} from "../../../commons/gql/graphql";
+} from "../../../../commons/gql/graphql";
 import { useMutation, useQuery } from "@apollo/client";
 import { MouseEvent, useState } from "react";
 import { Modal } from "antd";

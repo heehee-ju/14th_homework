@@ -1,0 +1,39 @@
+아래의 조건을 모두 적용하여, 아래의 요구사항을 모두 구현할 것.
+구현 결과를 체크리스트로 반환할 것.
+
+==============================================
+
+조건-커서룰) 아래의 커서룰을 적용하여 작업하고, 이 작업이 끝나면 해당 rules 적용 결과를 체크리스트로 반환할 것.
+            - @01-common.mdc
+            - @02-wireframe.mdc
+
+==============================================
+
+조건-파일경로) 구현될 TSX 파일경로: src/components/voucher/index.tsx
+조건-파일경로) 구현될 CSS 파일경로: src/components/voucher/styles.module.css
+
+==============================================
+
+핵심요구사항) 완성된 컴포넌트를 페이지에서 import하여 연결시킬 것.
+                - 연결될 경로: src/app/voucher/page.tsx
+
+핵심요구사항) HTML과 flexbox를 활용한 와이어프레임 구조만 만들어낼 것.
+
+핵심요구사항) 생성된 각 영역별로 다른 background-color를 줄 것.
+
+핵심요구사항) 각 영역은 아래의 수치값을 그대로 반영할 것. (단위: px)
+
+   - title1: 1280 x 36
+   - recommend: 1280 x 628
+   - gap: 1280 x 64
+   - advertisement: 1280 x 240
+   - gap: 1280 x 64
+   - title2: 1280 x 36
+   - buttonTabs: 1280 x 40
+   - searchbar: 1280 x 48
+   - category: 1280 x 104
+   - gap: 1280 x 32
+   - productList: 1280 x 864
+   - gap: 1280 x 40
+
+                

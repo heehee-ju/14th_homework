@@ -6,7 +6,7 @@ import {
   FetchBoardDocument,
   UpdateBoardDocument,
   UploadFileDocument,
-} from "../../commons/gql/graphql";
+} from "../../../commons/gql/graphql";
 import { Address } from "react-daum-postcode";
 import { Modal } from "antd";
 import { checkValidationFile } from "@/commons/libraries/validationFile";

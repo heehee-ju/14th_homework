@@ -1,0 +1,673 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* title1 영역 */
+.title1 {
+  width: 100%;
+  height: 36px;
+}
+
+/* title2 영역 */
+.title2 {
+  width: 100%;
+  height: 36px;
+}
+
+/* recommend 영역 */
+.recommend {
+  width: 100%;
+  height: 628px;
+  display: flex;
+  gap: 24px;
+}
+
+.recommendCard {
+  width: 628px;
+  height: 628px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.recommendCardImage {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.recommendCardOverlay {
+  margin-top: auto;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.bookmark {
+  align-self: flex-end;
+  margin-bottom: auto;
+  margin-top: 24px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4px 8px;
+  border-radius: 8px;
+  width: 53px;
+  height: 32px;
+  justify-content: center;
+}
+
+.bookmarkCount {
+  color: #ffffff;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.recommendCardContent {
+  width: 580px;
+  margin-top: auto;
+}
+
+.recommendCardTitle {
+  margin-bottom: 16px;
+}
+
+.recommendCardTitle h3 {
+  color: #ffffff;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0 0 8px 0;
+}
+
+.recommendCardTitle p {
+  color: #ffffff;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.recommendCardPrice {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.recommendCardPrice span:first-child {
+  color: #ffffff;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.recommendCardPrice span:last-child {
+  color: #ffffff;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.gap {
+  width: 100%;
+  height: 64px;
+}
+
+/* advertisement 영역 */
+.advertisement {
+  width: 100%;
+  height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #cccbb4;
+  display: flex;
+  flex-direction: row;
+}
+
+.advertisementImage {
+  width: 456px;
+  height: 240px;
+  flex-shrink: 0;
+}
+
+.advertisementContent {
+  flex: 1;
+  height: 100%;
+  padding-right: 209px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-top: 48px;
+}
+
+.advertisementBadges {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.advertisementBadge {
+  background-color: #abaa8c;
+  color: #ffffff;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+.advertisementTitle {
+  color: #000000;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44.2px;
+  margin: 0;
+  text-align: right;
+}
+
+/* buttonTabs 영역 */
+.buttonTabs {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  gap: 16px;
+}
+
+.tab {
+  width: 123px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.tabActive {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.tab:not(.tabActive) {
+  background-color: #ffffff;
+  color: #525252;
+  font-weight: 500;
+}
+
+/* searchbar 영역 */
+.searchbar {
+  width: 100%;
+  height: 48px;
+}
+
+.searchbarContent {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.datepicker {
+  width: 289px;
+  height: 48px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.datepickerText {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #777777;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.searchInput {
+  flex: 1;
+  height: 48px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.searchInput input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #919191;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  outline: none;
+}
+
+.searchInput input::placeholder {
+  color: #919191;
+}
+
+.searchButton {
+  width: 64px;
+  height: 48px;
+  background-color: #000000;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+}
+
+.searchButton span {
+  color: #ffffff;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.sellButton {
+  width: 178px;
+  height: 48px;
+  background-color: #2974e5;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+}
+
+.sellButton span {
+  color: #ffffff;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* category 영역 */
+.category {
+  width: 100%;
+  height: 104px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100px;
+  height: 72px;
+}
+
+.categoryItem span {
+  color: #333333;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.gapSmall {
+  width: 100%;
+  height: 32px;
+}
+
+/* productList 영역 */
+.productList {
+  width: 100%;
+  min-height: 864px;
+  display: grid;
+  grid-template-columns: repeat(4, 296px);
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  width: 296px;
+  height: 416px;
+}
+
+.productCardImage {
+  position: relative;
+  width: 100%;
+  height: 296px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.productBookmark {
+  align-self: flex-end;
+  margin-top: 16px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.productBookmark span {
+  color: #ffffff;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.productCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.productCardTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.productCardTitle h4 {
+  color: #333333;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.productCardTitle p {
+  color: #5f5f5f;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.productCardTags {
+  margin-top: 4px;
+}
+
+.productCardTags span {
+  color: #2974e5;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.productCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.productCardProfile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.productCardProfile img {
+  border-radius: 50%;
+}
+
+.productCardProfile span {
+  color: #5f5f5f;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.productCardPrice {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.productCardPrice span:first-child {
+  color: #1c1c1c;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.productCardPrice span:last-child {
+  color: #1c1c1c;
+  font-family:
+    'Pretendard Variable',
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.gapBottom {
+  width: 100%;
+  height: 40px;
+}
