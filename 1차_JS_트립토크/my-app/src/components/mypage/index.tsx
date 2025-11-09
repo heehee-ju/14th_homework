@@ -1,8 +1,15 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
 
 export default function Mypage() {
+  const router = useRouter();
+
+  const handleTabClick = (path: string) => {
+    router.push(path);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.gap}></div>
@@ -39,11 +46,19 @@ export default function Mypage() {
             거래내역&북마크
             <img src="/icons/right_arrow@2x.png" alt="arrow" className={styles.userInfoTabIcon} />
           </div>
-          <div className={`${styles.userInfoTab} ${styles.userInfoTabInactive}`}>
+          <div
+            className={`${styles.userInfoTab} ${styles.userInfoTabInactive}`}
+            onClick={() => handleTabClick('/mypage/points')}
+            style={{ cursor: 'pointer' }}
+          >
             포인트 사용 내역
             <img src="/icons/right_arrow@2x.png" alt="arrow" className={styles.userInfoTabIcon} />
           </div>
-          <div className={`${styles.userInfoTab} ${styles.userInfoTabInactive}`}>
+          <div
+            className={`${styles.userInfoTab} ${styles.userInfoTabInactive}`}
+            onClick={() => handleTabClick('/mypage/password')}
+            style={{ cursor: 'pointer' }}
+          >
             비밀번호 변경
             <img src="/icons/right_arrow@2x.png" alt="arrow" className={styles.userInfoTabIcon} />
           </div>
