@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import chatIcon from "./icon/chat.svg";
-import styles from "./styles.module.css";
-import { useCommentWrite } from "./hook";
-import { Modal, Rate } from "antd";
-import { ICommentWrite } from "./types";
+import Image from 'next/image';
+import chatIcon from './icon/chat.svg';
+import styles from './styles.module.css';
+import { useCommentWrite } from './hook';
+import { Modal, Rate } from 'antd';
+import { ICommentWrite } from './types';
 
 export default function CommentWrite({ isEdit, el }: ICommentWrite) {
   const {
@@ -74,21 +74,15 @@ export default function CommentWrite({ isEdit, el }: ICommentWrite) {
             onChange={onChangeComment}
           />
           <div>
-            <button
-              className={
-                isEdit ? styles.showCancelButton : styles.hiddenCancelButton
-              }
-            >
+            <button className={isEdit ? styles.showCancelButton : styles.hiddenCancelButton}>
               취소
             </button>
             <button
-              className={
-                isEdit ? styles.commentEditButton : styles.commentWriteButton
-              }
+              className={isEdit ? styles.commentEditButton : styles.commentWriteButton}
               onClick={isEdit ? onClickEditComment : onClickComment}
               disabled={등록버튼비활성화}
             >
-              {isEdit ? "수정하기" : "댓글등록"}
+              {isEdit ? '수정하기' : '댓글등록'}
             </button>
           </div>
           <Modal

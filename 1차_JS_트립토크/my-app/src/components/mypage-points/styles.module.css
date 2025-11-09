@@ -1,0 +1,404 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.gap {
+  width: 100%;
+  height: 40px;
+}
+
+.gapSmall {
+  width: 100%;
+  height: 24px;
+}
+
+/* title 영역 */
+.title {
+  width: 100%;
+  height: 36px;
+}
+
+.titleText {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+/* userInfo 영역 */
+.userInfo {
+  width: 100%;
+  height: 332px;
+  background-color: #ffffff;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.userInfoHeader {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  min-height: 1px;
+  background-color: #e4e4e4;
+  flex-shrink: 0;
+}
+
+.userInfoProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.profileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.profileImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileName {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #333333;
+}
+
+.profileArrow {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileArrow img {
+  width: 24px;
+  height: 24px;
+}
+
+.userInfoPoint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.pointIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pointValue {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.userInfoTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.userInfoTab {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+}
+
+.userInfoTab:first-child {
+  font-weight: 600;
+}
+
+.userInfoTabInactive {
+  background-color: transparent;
+}
+
+.userInfoTabIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* buttonTabs 영역 */
+.buttonTabs {
+  width: 100%;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.tabButton {
+  border: none;
+  border-radius: 8px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+.tabButton:nth-child(1) {
+  width: 60px;
+}
+
+.tabButton:nth-child(2),
+.tabButton:nth-child(3),
+.tabButton:nth-child(4) {
+  width: 88px;
+}
+
+.tabButtonActive {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.tabButton:not(.tabButtonActive) {
+  background-color: #ffffff;
+  color: #525252;
+  font-weight: 500;
+}
+
+/* productList 영역 */
+.productList {
+  width: 100%;
+  min-height: 712px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+  padding: 24px 48px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.productListContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.productListHeader {
+  display: flex;
+  height: 52px;
+  align-items: center;
+  padding: 16px 24px;
+}
+
+.headerCell {
+  text-align: center;
+
+  font-family: 'Pretendard Variable', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1c1c1c;
+}
+
+.headerCell:nth-child(1) {
+  width: 100px;
+}
+
+.headerCell:nth-child(2) {
+  width: 100px;
+}
+
+.headerCell:nth-child(3) {
+  flex: 1;
+  text-align: center;
+}
+
+.headerCell:nth-child(4) {
+  width: 100px;
+}
+
+.productListBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.productListItem {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  border: 1px solid #f2f2f2;
+  border-radius: 8px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.itemCell {
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Pretendard Variable', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #919191;
+}
+
+.itemCell:nth-child(1) {
+  width: 100px;
+  text-align: center;
+}
+
+.itemCell:nth-child(2) {
+  width: 100px;
+  text-align: center;
+}
+
+.itemCell:nth-child(3) {
+  flex: 1;
+  text-align: left;
+}
+
+.itemCell:nth-child(4) {
+  width: 100px;
+  text-align: center;
+  font-weight: 500;
+  color: #000000;
+}
+
+.itemContentCharge,
+.itemContentSell {
+  font-weight: 700;
+  color: #2974e5;
+}
+
+.itemContentBuy {
+  font-weight: 700;
+  color: #f66a6a;
+}
+
+.itemAmountBuy {
+  font-weight: 500;
+  color: #f66a6a;
+}
+
+.itemAmountSell {
+  font-weight: 500;
+  color: #2974e5;
+}
+
+/* pagination 영역 - productList의 자식 */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.paginationArrow {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.paginationArrow img {
+  width: 24px;
+  height: 24px;
+}
+
+.paginationNumbers {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.paginationNumber {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #777777;
+  cursor: pointer;
+}
+
+.paginationNumberActive {
+  background-color: #f2f2f2;
+  color: #000000;
+  font-weight: 500;
+}

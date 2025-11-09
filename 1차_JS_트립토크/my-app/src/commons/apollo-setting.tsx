@@ -32,16 +32,11 @@
 
 // commons/settings/18-01-apollo-upload-setting.tsx
 
-"use client";
+'use client';
 
-import {
-  ApolloClient,
-  ApolloLink,
-  ApolloProvider,
-  InMemoryCache,
-} from "@apollo/client";
+import { ApolloClient, ApolloLink, ApolloProvider, InMemoryCache } from '@apollo/client';
 // @ts-expect-error - apollo-upload-client type declaration issue
-import { createUploadLink } from "apollo-upload-client";
+import { createUploadLink } from 'apollo-upload-client';
 
 interface IApolloSetting {
   children: React.ReactNode;
@@ -49,8 +44,8 @@ interface IApolloSetting {
 
 export default function ApolloUploadSetting(props: IApolloSetting) {
   const uploadLink = createUploadLink({
-    uri: "http://main-practice.codebootcamp.co.kr/graphql",
-    credentials: "include", // 필요시
+    uri: 'http://main-practice.codebootcamp.co.kr/graphql',
+    credentials: 'include', // 필요시
   });
 
   const client = new ApolloClient({

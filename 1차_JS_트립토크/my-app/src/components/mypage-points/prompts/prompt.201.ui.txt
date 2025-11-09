@@ -14,8 +14,9 @@
 
 조건-피그마) 구현될 컴포넌트 노드ID(title 영역): 285:31031
 조건-피그마) 구현될 컴포넌트 노드ID(userInfo 영역): 285:31035
-조건-피그마) 구현될 컴포넌트 노드ID(changePassword 영역): 285:31173
-
+조건-피그마) 구현될 컴포넌트 노드ID(buttonTabs 영역): 285:31168
+조건-피그마) 구현될 컴포넌트 노드ID(productList 영역): 285:31173
+조건-피그마) 구현될 컴포넌트 노드ID(productList 내 pagination 영역): 285:31275
 
 조건-파일경로) 구현될 TSX 파일경로: src/components/mypage-password/index.tsx
 조건-파일경로) 구현될 CSS 파일경로: src/components/mypage-password/styles.module.css
@@ -32,9 +33,17 @@
 
 ==============================================
 
-핵심요구사항) MCP를 연동하여 위치, 크기, 색, 폰트, 폰트 굵기 등 피그마의 디자인을 그대로 와이어프레임의 title, userInfo, changePassword 영역에 그대로 소스코드로 구현할 것.
+기존히스토리-참고만) MCP를 연동하여 위치, 색, 폰트, 폰트 굵기 등 피그마의 디자인을 그대로 와이어프레임의 title, userInfo, buttonTabs, productList 영역에 그대로 소스코드로 구현할 것.
 
-핵심요구사항) changePassword 영역에 있는 "새 비밀번호를 입력해 주세요"와 "새 비밀번호를 확인해 주세요"는 <input> 구현할 것.
+기존히스토리-참고만) buttonTabs영역은 <button>태그 사용할 것.
 
-핵심요구사항) "비밀번호 변경"은 <button>으로 구현할 것
+기존히스토리-참고만) pagination 영역은 productList의 자식으로 들어가게 구현할 것. 
+
+==============================================
+
+핵심요구사항) pagination에 들어있는 아이콘이 피그마 디자인과 다른 아이콘이 들어가있음. 수정할 것.
+
+핵심요구사항) 피그마에서 구현된 pagination의 아이콘과 숫자의 gap은 8px이고, 숫자와 숫자 사이의 gap은 16px임. 피그마 디자인과 같게 수정할 것.
+
+
         

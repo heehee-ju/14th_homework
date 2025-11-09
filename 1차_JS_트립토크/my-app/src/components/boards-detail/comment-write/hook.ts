@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { ChangeEvent, useState } from "react";
-import { useMutation, useQuery } from "@apollo/client";
-import { useParams } from "next/navigation";
+import { ChangeEvent, useState } from 'react';
+import { useMutation, useQuery } from '@apollo/client';
+import { useParams } from 'next/navigation';
 import {
   CreateBoardCommentDocument,
   FetchBoardCommentsDocument,
   UpdateBoardCommentDocument,
-} from "@/commons/gql/graphql";
+} from '@/commons/gql/graphql';
 
 export const useCommentWrite = (
   el?: {
@@ -15,20 +15,20 @@ export const useCommentWrite = (
     writer?: string | null;
     contents?: string;
     rating?: number;
-  } | null
+  } | null,
 ) => {
   const params = useParams();
 
   const [createBoardComment] = useMutation(CreateBoardCommentDocument);
   const [updateBoardComment] = useMutation(UpdateBoardCommentDocument);
 
-  const [writer, setWriter] = useState(el?.writer ?? "");
-  const [password, setPassword] = useState("");
-  const [comment, setComment] = useState(el?.contents ?? "");
+  const [writer, setWriter] = useState(el?.writer ?? '');
+  const [password, setPassword] = useState('');
+  const [comment, setComment] = useState(el?.contents ?? '');
   const [rating, setRating] = useState(el?.rating ?? 0);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState("");
+  const [modalContent, setModalContent] = useState('');
 
   const { data, refetch } = useQuery(FetchBoardCommentsDocument, {
     variables: { page: 1, boardId: params.boardId.toString() },
@@ -52,12 +52,12 @@ export const useCommentWrite = (
 
   const onClickComment = () => {
     setIsModalOpen(true);
-    setModalContent("댓글 등록이 완료 되었습니다!");
+    setModalContent('댓글 등록이 완료 되었습니다!');
   };
 
   const onClickEditComment = () => {
     setIsModalOpen(true);
-    setModalContent("댓글 수정이 완료 되었습니다");
+    setModalContent('댓글 수정이 완료 되었습니다');
   };
 
   const handleCancel = () => {
@@ -95,7 +95,7 @@ export const useCommentWrite = (
         if (data?.updateBoardComment?._id) {
           setIsModalOpen(false);
         } else {
-          setModalContent("댓글 수정에 실패하였습니다");
+          setModalContent('댓글 수정에 실패하였습니다');
           setIsModalOpen(true);
         }
       }
@@ -126,17 +126,17 @@ export const useCommentWrite = (
         if (createData?.createBoardComment?._id) {
           setIsModalOpen(false);
           // modal 창 뜬 후에 input들 초기화 형태로 만들어주기
-          setWriter("");
-          setPassword("");
-          setComment("");
+          setWriter('');
+          setPassword('');
+          setComment('');
           setRating(0);
         } else {
-          setModalContent("댓글 등록에 실패하였습니다");
+          setModalContent('댓글 등록에 실패하였습니다');
           setIsModalOpen(false);
         }
       }
     } catch (err: any) {
-      setModalContent("에러가 발생하였습니다. 다시 시도해 주세요.");
+      setModalContent('에러가 발생하였습니다. 다시 시도해 주세요.');
       setIsModalOpen(true);
       console.error(err);
     }

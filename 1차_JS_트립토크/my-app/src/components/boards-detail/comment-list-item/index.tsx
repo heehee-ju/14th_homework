@@ -1,35 +1,31 @@
-"use client";
-import Image from "next/image";
-import styles from "./styles.module.css";
-import profileIcon from "./icon/img.svg";
-import editIcon from "./icon/edit.svg";
-import closeIcon from "./icon/close.svg";
-import { Rate } from "antd";
+'use client';
+import Image from 'next/image';
+import styles from './styles.module.css';
+import profileIcon from './icon/img.svg';
+import editIcon from './icon/edit.svg';
+import closeIcon from './icon/close.svg';
+import { Rate } from 'antd';
 
-import { ICommentListItem } from "./types";
-import { useState } from "react";
-import CommentWrite from "../comment-write";
+import { ICommentListItem } from './types';
+import { useState } from 'react';
+import CommentWrite from '../comment-write';
 
 const IMAGE_SRC = {
   profileIcon: {
     src: profileIcon,
-    alt: "프로필이미지",
+    alt: '프로필이미지',
   },
   editIcon: {
     src: editIcon,
-    alt: "편집버튼",
+    alt: '편집버튼',
   },
   closeIcon: {
     src: closeIcon,
-    alt: "삭제버튼",
+    alt: '삭제버튼',
   },
 };
 
-export default function CommentListItem({
-  el,
-  index,
-  length,
-}: ICommentListItem) {
+export default function CommentListItem({ el, index, length }: ICommentListItem) {
   const [isEditing, setIsEditing] = useState(false);
 
   //   const onClickEditIcon = (id: string) => setIsEditing(id);
@@ -45,13 +41,8 @@ export default function CommentListItem({
               <div className={styles.commentFrame}>
                 <div className={styles.header}>
                   <div className={styles.header_Profile}>
-                    <Image
-                      src={IMAGE_SRC.profileIcon.src}
-                      alt={IMAGE_SRC.profileIcon.alt}
-                    />
-                    <div className={styles.header_Profile_writer}>
-                      {el?.writer}
-                    </div>
+                    <Image src={IMAGE_SRC.profileIcon.src} alt={IMAGE_SRC.profileIcon.alt} />
+                    <div className={styles.header_Profile_writer}>{el?.writer}</div>
                     <Rate
                       disabled
                       className={styles.header_Rating}
@@ -64,16 +55,13 @@ export default function CommentListItem({
                       alt={IMAGE_SRC.editIcon.alt}
                       onClick={() => setIsEditing(true)}
                     />
-                    <Image
-                      src={IMAGE_SRC.closeIcon.src}
-                      alt={IMAGE_SRC.closeIcon.alt}
-                    />
+                    <Image src={IMAGE_SRC.closeIcon.src} alt={IMAGE_SRC.closeIcon.alt} />
                   </div>
                 </div>
 
                 <div className={styles.commentContents}>{el?.contents}</div>
                 <div className={styles.commentDate}>
-                  {el?.createdAt ? el.createdAt.split("T")[0] : ""}
+                  {el?.createdAt ? el.createdAt.split('T')[0] : ''}
                 </div>
               </div>
             </div>
