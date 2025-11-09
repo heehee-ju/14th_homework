@@ -6,6 +6,8 @@ import Image from 'next/image';
 export default function Voucher() {
   return (
     <div className={styles.container}>
+      <div className={styles.gapheader}></div>
+
       {/* title1 영역 */}
       <div className={styles.title1}>
         <p className={styles.titleText}>2024 끝여름 낭만있게 마무리 하고 싶다면?</p>
@@ -15,24 +17,37 @@ export default function Voucher() {
       <div className={styles.recommend}>
         <div className={styles.recommendCard}>
           <div className={styles.recommendCardImage}>
-            <Image src="/images/a.png" alt="포항 숙소" fill style={{ objectFit: 'cover' }} />
-            <div className={styles.bookmark}>
-              <Image src="/icons/bookmark@2x.png" alt="북마크" width={24} height={24} />
-              <span className={styles.bookmarkCount}>24</span>
+            <div className={styles.recommendCardImageBg}>
+              <Image
+                src="/images/a.png"
+                alt="포항 숙소"
+                width={628}
+                height={628}
+                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+              />
             </div>
-            <div className={styles.recommendCardOverlay}>
-              <div className={styles.recommendCardContent}>
-                <div className={styles.recommendCardTitle}>
-                  <h3>포항 : 당장 가고 싶은 숙소</h3>
-                  <p>
-                    살어리 살어리랏다 쳥산(靑山)애 살어리랏다멀위랑 ᄃᆞ래랑 먹고 쳥산(靑山)애
-                    살어리랏다얄리얄리 얄랑셩 얄라리 얄라 우러라 우러라 새여 자고 니러 우러라 새여
-                    널라와 시름 한 나도 자고 니러 우니로라 얄리얄리 얄라셩 얄라리 얄라
-                  </p>
-                </div>
-                <div className={styles.recommendCardPrice}>
-                  <span>32,900</span>
-                  <span>원</span>
+            <div className={styles.recommendCardTop}>
+              <div className={styles.bookmark}>
+                <Image src="/icons/bookmark@2x.png" alt="북마크" width={24} height={24} />
+                <span className={styles.bookmarkCount}>24</span>
+              </div>
+            </div>
+
+            <div className={styles.recommendCardBottom}>
+              <div className={styles.recommendCardOverlay}>
+                <div className={styles.recommendCardContent}>
+                  <div className={styles.recommendCardTitle}>
+                    <h3>포항 : 당장 가고 싶은 숙소</h3>
+                    <p>
+                      살어리 살어리랏다 쳥산(靑山)애 살어리랏다멀위랑 ᄃᆞ래랑 먹고 쳥산(靑山)애
+                      살어리랏다얄리얄리 얄랑셩 얄라리 얄라 우러라 우러라 새여 자고 니러 우러라 새여
+                      널라와 시름 한 나도 자고 니러 우니로라 얄리얄리 얄라셩 얄라리 얄라
+                    </p>
+                  </div>
+                  <div className={styles.recommendCardPrice}>
+                    <span>32,900</span>
+                    <span>원</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -40,23 +55,35 @@ export default function Voucher() {
         </div>
         <div className={styles.recommendCard}>
           <div className={styles.recommendCardImage}>
-            <Image src="/images/b.png" alt="강릉 숙소" fill style={{ objectFit: 'cover' }} />
-            <div className={styles.bookmark}>
-              <Image src="/icons/bookmark@2x.png" alt="북마크" width={24} height={24} />
-              <span className={styles.bookmarkCount}>24</span>
+            <div className={styles.recommendCardImageBg}>
+              <Image
+                src="/images/b.png"
+                alt="강릉 숙소"
+                width={628}
+                height={628}
+                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+              />
+            </div>
+            <div className={styles.recommendCardTop}>
+              <div className={styles.bookmark}>
+                <Image src="/icons/bookmark@2x.png" alt="북마크" width={24} height={24} />
+                <span className={styles.bookmarkCount}>24</span>
+              </div>
             </div>
             <div className={styles.rightPageIcon}>
-              <Image src="/icons/right page icon button@2x.png" alt="" width={40} height={40} />
+              <Image src="/icons/right page icon button.png" alt="" width={90} height={90} />
             </div>
-            <div className={styles.recommendCardOverlay}>
-              <div className={styles.recommendCardContent}>
-                <div className={styles.recommendCardTitle}>
-                  <h3>강릉 : 마음까지 깨끗해지는 하얀 숙소</h3>
-                  <p>살어리 살어리랏다 강릉에 평생 살어리랏다</p>
-                </div>
-                <div className={styles.recommendCardPrice}>
-                  <span>32,900</span>
-                  <span>원</span>
+            <div className={styles.recommendCardBottom}>
+              <div className={styles.recommendCardOverlay}>
+                <div className={styles.recommendCardContent}>
+                  <div className={styles.recommendCardTitle}>
+                    <h3>강릉 : 마음까지 깨끗해지는 하얀 숙소</h3>
+                    <p>살어리 살어리랏다 강릉에 평생 살어리랏다</p>
+                  </div>
+                  <div className={styles.recommendCardPrice}>
+                    <span>32,900</span>
+                    <span>원</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -73,8 +100,9 @@ export default function Voucher() {
           <Image
             src="/images/Solitary Contemplation Beneath Nature's Arch 1.png"
             alt=""
-            fill
-            style={{ objectFit: 'cover' }}
+            width={456}
+            height={240}
+            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
           />
         </div>
         <div className={styles.advertisementContent}>
@@ -97,11 +125,17 @@ export default function Voucher() {
         <p className={styles.titleText}>여기에서만 예약할 수 있는 숙소</p>
       </div>
 
+      {/* gap 영역 */}
+      <div className={styles.gaptiny}></div>
+
       {/* buttonTabs 영역 */}
       <div className={styles.buttonTabs}>
         <button className={`${styles.tab} ${styles.tabActive}`}>예약 가능 숙소</button>
         <button className={styles.tab}>예약 마감 숙소</button>
       </div>
+
+      {/* gap 영역 */}
+      <div className={styles.gaptiny}></div>
 
       {/* searchbar 영역 */}
       <div className={styles.searchbar}>
@@ -122,11 +156,14 @@ export default function Voucher() {
             <span>검색</span>
           </button>
           <button className={styles.sellButton}>
+            <Image src="/icons/voucher_sell.png" alt="" width={24} height={24} />
             <span>숙박권 판매하기</span>
-            <Image src="/icons/right page icon button@2x.png" alt="" width={24} height={24} />
           </button>
         </div>
       </div>
+
+      {/* gap 영역 */}
+      <div className={styles.gaptiny}></div>
 
       {/* category 영역 */}
       <div className={styles.category}>
@@ -184,8 +221,10 @@ export default function Voucher() {
               <Image
                 src={`/images/${item <= 4 ? 'c.png' : 'd.png'}`}
                 alt="상품 이미지"
-                fill
-                style={{ objectFit: 'cover' }}
+                width={296}
+                height={296}
+                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                className={styles.productCardImageBg}
               />
               <div className={styles.productBookmark}>
                 <Image src="/icons/bookmark@2x.png" alt="북마크" width={24} height={24} />
@@ -210,7 +249,7 @@ export default function Voucher() {
               </div>
               <div className={styles.productCardFooter}>
                 <div className={styles.productCardProfile}>
-                  <Image src="/images/img.png" alt="" width={24} height={24} />
+                  <Image src="/images/f.svg" alt="" width={24} height={24} />
                   <span>빈얀트리</span>
                 </div>
                 <div className={styles.productCardPrice}>
