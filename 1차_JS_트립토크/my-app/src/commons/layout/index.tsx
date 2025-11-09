@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-// import BoardList from "@/components/boards-list/list";
-import BannerList from "./banner";
-import Navigation from "./navigation";
+// import BoardList from "@/components/board/boards-list/list";
+import BannerList from './banner';
+import Navigation from './navigation';
 
 interface ILayout {
   children: React.ReactNode;

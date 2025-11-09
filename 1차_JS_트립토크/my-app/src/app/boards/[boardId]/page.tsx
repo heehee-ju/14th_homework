@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import CommentList from "@/components/boards-detail/comment-list";
-import CommentWrite from "@/components/boards-detail/comment-write";
-import BoardsDetail from "@/components/boards-detail/detail";
+import CommentList from '@/components/board/boards-detail/comment-list';
+import CommentWrite from '@/components/board/boards-detail/comment-write';
+import BoardsDetail from '@/components/board/boards-detail/detail';
 
 export default function BoardsDetailPage() {
   return (

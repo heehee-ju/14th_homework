@@ -1,7 +1,7 @@
 'use client';
 
 import { FetchBoardDocument } from '@/commons/gql/graphql';
-import BoardsComponentWrite from '@/components/boards-write/index';
+import BoardsComponentWrite from '@/components/board/boards-write/index';
 import { gql, useQuery } from '@apollo/client';
 import { useParams } from 'next/navigation';
 
