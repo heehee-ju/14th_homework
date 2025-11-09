@@ -7,7 +7,9 @@ export default function Voucher() {
   return (
     <div className={styles.container}>
       {/* title1 영역 */}
-      <div className={styles.title1}></div>
+      <div className={styles.title1}>
+        <p className={styles.titleText}>2024 끝여름 낭만있게 마무리 하고 싶다면?</p>
+      </div>
 
       {/* recommend 영역 */}
       <div className={styles.recommend}>
@@ -43,6 +45,9 @@ export default function Voucher() {
               <Image src="/icons/bookmark@2x.png" alt="북마크" width={24} height={24} />
               <span className={styles.bookmarkCount}>24</span>
             </div>
+            <div className={styles.rightPageIcon}>
+              <Image src="/icons/right page icon button@2x.png" alt="" width={40} height={40} />
+            </div>
             <div className={styles.recommendCardOverlay}>
               <div className={styles.recommendCardContent}>
                 <div className={styles.recommendCardTitle}>
@@ -67,7 +72,7 @@ export default function Voucher() {
         <div className={styles.advertisementImage}>
           <Image
             src="/images/Solitary Contemplation Beneath Nature's Arch 1.png"
-            alt="광고 배경"
+            alt=""
             fill
             style={{ objectFit: 'cover' }}
           />
@@ -88,7 +93,9 @@ export default function Voucher() {
       <div className={styles.gap}></div>
 
       {/* title2 영역 */}
-      <div className={styles.title2}></div>
+      <div className={styles.title2}>
+        <p className={styles.titleText}>여기에서만 예약할 수 있는 숙소</p>
+      </div>
 
       {/* buttonTabs 영역 */}
       <div className={styles.buttonTabs}>
@@ -100,7 +107,7 @@ export default function Voucher() {
       <div className={styles.searchbar}>
         <div className={styles.searchbarContent}>
           <div className={styles.datepicker}>
-            <Image src="/icons/search@2x.png" alt="달력" width={24} height={24} />
+            <Image src="/icons/icon/outline/calendar.png" alt="달력" width={24} height={24} />
             <div className={styles.datepickerText}>
               <span>YYYY.MM.DD</span>
               <span>-</span>
@@ -116,6 +123,7 @@ export default function Voucher() {
           </button>
           <button className={styles.sellButton}>
             <span>숙박권 판매하기</span>
+            <Image src="/icons/right page icon button@2x.png" alt="" width={24} height={24} />
           </button>
         </div>
       </div>
@@ -174,10 +182,10 @@ export default function Voucher() {
           <div key={item} className={styles.productCard}>
             <div className={styles.productCardImage}>
               <Image
-                src={`/images/${item <= 4 ? 'img-1.png' : 'img-2.png'}`}
+                src={`/images/${item <= 4 ? 'c.png' : 'd.png'}`}
                 alt="상품 이미지"
                 fill
-                style={{ objectFit: 'cover', position: 'absolute' }}
+                style={{ objectFit: 'cover' }}
               />
               <div className={styles.productBookmark}>
                 <Image src="/icons/bookmark@2x.png" alt="북마크" width={24} height={24} />
@@ -202,7 +210,7 @@ export default function Voucher() {
               </div>
               <div className={styles.productCardFooter}>
                 <div className={styles.productCardProfile}>
-                  <Image src="/images/img.png" alt="프로필" width={24} height={24} />
+                  <Image src="/images/img.png" alt="" width={24} height={24} />
                   <span>빈얀트리</span>
                 </div>
                 <div className={styles.productCardPrice}>
