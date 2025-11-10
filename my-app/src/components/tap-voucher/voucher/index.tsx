@@ -14,80 +14,83 @@ export default function Voucher() {
       </div>
 
       {/* recommend 영역 */}
-      <div className={styles.recommend}>
-        <div className={styles.recommendCard}>
-          <div className={styles.recommendCardImage}>
-            <div className={styles.recommendCardImageBg}>
-              <Image
-                src="/images/voucher_list.png"
-                alt="포항 숙소"
-                width={628}
-                height={628}
-                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-              />
-            </div>
-            <div className={styles.recommendCardTop}>
-              <div className={styles.bookmark}>
-                <Image src="/icons/bookmark.png" alt="북마크" width={24} height={24} />
-                <span className={styles.bookmarkCount}>24</span>
+      <div className={styles.recommendWrapper}>
+        <div className={styles.recommend}>
+          <div className={styles.recommendCard}>
+            <div className={styles.recommendCardImage}>
+              <div className={styles.recommendCardImageBg}>
+                <Image
+                  src="/images/voucher_list.png"
+                  alt="포항 숙소"
+                  width={628}
+                  height={628}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                />
+              </div>
+              <div className={styles.recommendCardTop}>
+                <div className={styles.bookmark}>
+                  <Image src="/icons/bookmark.png" alt="북마크" width={24} height={24} />
+                  <span className={styles.bookmarkCount}>24</span>
+                </div>
+              </div>
+
+              <div className={styles.recommendCardBottom}>
+                <div className={styles.recommendCardOverlay}>
+                  <div className={styles.recommendCardContent}>
+                    <div className={styles.recommendCardTitle}>
+                      <h3>포항 : 당장 가고 싶은 숙소</h3>
+                      <p>
+                        살어리 살어리랏다 쳥산(靑山)애 살어리랏다멀위랑 ᄃᆞ래랑 먹고 쳥산(靑山)애
+                        살어리랏다얄리얄리 얄랑셩 얄라리 얄라 우러라 우러라 새여 자고 니러 우러라
+                        새여 널라와 시름 한 나도 자고 니러 우니로라 얄리얄리 얄라셩 얄라리 얄라
+                      </p>
+                    </div>
+                    <div className={styles.recommendCardPrice}>
+                      <span>32,900</span>
+                      <span>원</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+          <div className={styles.recommendCard}>
+            <div className={styles.recommendCardImage}>
+              <div className={styles.recommendCardImageBg}>
+                <Image
+                  src="/images/b.png"
+                  alt="강릉 숙소"
+                  width={628}
+                  height={628}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                />
+              </div>
+              <div className={styles.recommendCardTop}>
+                <div className={styles.bookmark}>
+                  <Image src="/icons/bookmark.png" alt="북마크" width={24} height={24} />
+                  <span className={styles.bookmarkCount}>24</span>
+                </div>
+              </div>
 
-            <div className={styles.recommendCardBottom}>
-              <div className={styles.recommendCardOverlay}>
-                <div className={styles.recommendCardContent}>
-                  <div className={styles.recommendCardTitle}>
-                    <h3>포항 : 당장 가고 싶은 숙소</h3>
-                    <p>
-                      살어리 살어리랏다 쳥산(靑山)애 살어리랏다멀위랑 ᄃᆞ래랑 먹고 쳥산(靑山)애
-                      살어리랏다얄리얄리 얄랑셩 얄라리 얄라 우러라 우러라 새여 자고 니러 우러라 새여
-                      널라와 시름 한 나도 자고 니러 우니로라 얄리얄리 얄라셩 얄라리 얄라
-                    </p>
-                  </div>
-                  <div className={styles.recommendCardPrice}>
-                    <span>32,900</span>
-                    <span>원</span>
+              <div className={styles.recommendCardBottom}>
+                <div className={styles.recommendCardOverlay}>
+                  <div className={styles.recommendCardContent}>
+                    <div className={styles.recommendCardTitle}>
+                      <h3>강릉 : 마음까지 깨끗해지는 하얀 숙소</h3>
+                      <p>살어리 살어리랏다 강릉에 평생 살어리랏다</p>
+                    </div>
+                    <div className={styles.recommendCardPrice}>
+                      <span>32,900</span>
+                      <span>원</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className={styles.recommendCard}>
-          <div className={styles.recommendCardImage}>
-            <div className={styles.recommendCardImageBg}>
-              <Image
-                src="/images/b.png"
-                alt="강릉 숙소"
-                width={628}
-                height={628}
-                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-              />
-            </div>
-            <div className={styles.recommendCardTop}>
-              <div className={styles.bookmark}>
-                <Image src="/icons/bookmark.png" alt="북마크" width={24} height={24} />
-                <span className={styles.bookmarkCount}>24</span>
-              </div>
-            </div>
-            <div className={styles.rightPageIcon}>
-              <Image src="/icons/right page icon button.png" alt="" width={90} height={90} />
-            </div>
-            <div className={styles.recommendCardBottom}>
-              <div className={styles.recommendCardOverlay}>
-                <div className={styles.recommendCardContent}>
-                  <div className={styles.recommendCardTitle}>
-                    <h3>강릉 : 마음까지 깨끗해지는 하얀 숙소</h3>
-                    <p>살어리 살어리랏다 강릉에 평생 살어리랏다</p>
-                  </div>
-                  <div className={styles.recommendCardPrice}>
-                    <span>32,900</span>
-                    <span>원</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className={styles.rightPageIcon}>
+          <Image src="/icons/right page icon button.png" alt="" width={90} height={90} />
         </div>
       </div>
 
