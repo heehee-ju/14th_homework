@@ -1,16 +1,13 @@
-import { useRouter } from "next/navigation";
-import {
-  DeleteBoardDocument,
-  FetchBoardsDocument,
-} from "../../../../commons/gql/graphql";
-import { useMutation, useQuery } from "@apollo/client";
-import { MouseEvent, useState } from "react";
-import { Modal } from "antd";
-import { IBoardList } from "./types";
+import { useRouter } from 'next/navigation';
+import { DeleteBoardDocument, FetchBoardsDocument } from '../../../../commons/gql/graphql';
+import { useMutation, useQuery } from '@apollo/client';
+import { MouseEvent, useState } from 'react';
+import { Modal } from 'antd';
+import { IBoardList } from './types';
 
 export const useBoardList = (props: IBoardList) => {
   const router = useRouter();
-  const [hoveredId, setHoveredId] = useState("");
+  const [hoveredId, setHoveredId] = useState('');
 
   // const params = useParams<{ boardId: string }>();
   // const { data, refetch } = useQuery(FetchBoardsDocument);
@@ -27,13 +24,13 @@ export const useBoardList = (props: IBoardList) => {
       refetchQueries: [{ query: FetchBoardsDocument }],
     });
     Modal.success({
-      title: "삭제 완료",
-      content: "게시글이 성공적으로 삭제되었습니다.",
+      title: '삭제 완료',
+      content: '게시글이 성공적으로 삭제되었습니다.',
     });
   };
 
   const onClickMoveDetail = (event: MouseEvent<HTMLElement>, id: string) => {
-    console.log("이동할 id:", id);
+    console.log('이동할 id:', id);
     router.push(`/boards/${id}`);
   };
 

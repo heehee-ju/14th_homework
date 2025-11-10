@@ -1,20 +1,18 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import styles from "./style.module.css";
-import { useBoardsComponentWrite } from "./hook";
-import { IBoardsComponentWriteProps } from "./types";
-import addIcon from "../../../app/boards/new/assets/add.svg";
-import { Button, Modal } from "antd";
+import React from 'react';
+import Image from 'next/image';
+import styles from './style.module.css';
+import { useBoardsComponentWrite } from './hook';
+import { IBoardsComponentWriteProps } from './types';
+import addIcon from '../../../app/boards/new/assets/add.svg';
+import { Button, Modal } from 'antd';
 
-import { useState } from "react";
-import DaumPostcodeEmbed from "react-daum-postcode";
-import { CloseCircleFilled } from "@ant-design/icons";
+import { useState } from 'react';
+import DaumPostcodeEmbed from 'react-daum-postcode';
+import { CloseCircleFilled } from '@ant-design/icons';
 
-export default function BoardsComponentWrite(
-  props: IBoardsComponentWriteProps
-) {
+export default function BoardsComponentWrite(props: IBoardsComponentWriteProps) {
   const { isEdit } = props;
 
   const {
@@ -50,7 +48,7 @@ export default function BoardsComponentWrite(
   return (
     <div className={styles.게시물등록_frame}>
       <div className={styles.게시물등록_container}>
-        <h1>게시물{props.isEdit ? " 수정" : " 등록"}</h1>
+        <h1>게시물{props.isEdit ? ' 수정' : ' 등록'}</h1>
 
         <div className={styles.게시물등록_작성자and비밀번호}>
           <div className={styles.게시물등록_사용자인풋}>
@@ -60,18 +58,14 @@ export default function BoardsComponentWrite(
             <input
               id="writer"
               className={
-                isEdit
-                  ? styles.게시물등록_수정플레이스홀더
-                  : styles.게시물등록_플레이스홀더
+                isEdit ? styles.게시물등록_수정플레이스홀더 : styles.게시물등록_플레이스홀더
               }
               disabled={isEdit ? true : false}
               type="text"
               placeholder="작성자 명을 입력해 주세요."
               onChange={onChangeInputs}
               defaultValue={
-                isEdit
-                  ? inputs.writer || data?.fetchBoard?.writer || ""
-                  : inputs.writer
+                isEdit ? inputs.writer || data?.fetchBoard?.writer || '' : inputs.writer
               }
             />
             {/* //inputs.writer → 사용자가 지금 input에 입력한 값
@@ -88,20 +82,18 @@ export default function BoardsComponentWrite(
 
           <div className={styles.게시물등록_사용자인풋}>
             <label htmlFor="비밀번호" className={styles.게시물등록_라벨}>
-              비밀번호 <span style={{ color: "red" }}>*</span>
+              비밀번호 <span style={{ color: 'red' }}>*</span>
             </label>
             <input
               id="비밀번호"
               className={
-                isEdit
-                  ? styles.게시물등록_수정플레이스홀더
-                  : styles.게시물등록_플레이스홀더
+                isEdit ? styles.게시물등록_수정플레이스홀더 : styles.게시물등록_플레이스홀더
               }
               disabled={isEdit ? true : false}
               type="text"
               placeholder="비밀번호를 입력해 주세요."
               onChange={onChangePassword}
-              defaultValue={data ? "********" : ""}
+              defaultValue={data ? '********' : ''}
             />
             {/* <div className={styles.에러메세지_스타일}>{passworderror}</div> */}
           </div>
@@ -111,7 +103,7 @@ export default function BoardsComponentWrite(
 
         <div className={styles.게시물등록_사용자인풋}>
           <label htmlFor="제목" className={styles.게시물등록_라벨}>
-            제목 <span style={{ color: "red" }}>*</span>
+            제목 <span style={{ color: 'red' }}>*</span>
           </label>
           <input
             id="title"
@@ -119,29 +111,21 @@ export default function BoardsComponentWrite(
             type="text"
             placeholder="제목을 입력해 주세요."
             onChange={onChangeInputs}
-            value={
-              isEdit
-                ? inputs.title || data?.fetchBoard?.title || ""
-                : inputs.title
-            }
+            value={isEdit ? inputs.title || data?.fetchBoard?.title || '' : inputs.title}
           />
           {/* <div className={styles.에러메세지_스타일}>{titleerror}</div> */}
         </div>
 
         <div className={styles.게시물등록_사용자인풋}>
           <label htmlFor="내용" className={styles.게시물등록_라벨}>
-            내용 <span style={{ color: "red" }}>*</span>
+            내용 <span style={{ color: 'red' }}>*</span>
           </label>
           <textarea
             id="content"
             className={styles.게시물등록_플레이스홀더_내용}
             placeholder="내용을 입력해 주세요."
             onChange={onChangeInputs}
-            value={
-              isEdit
-                ? inputs.content || data?.fetchBoard?.contents || ""
-                : inputs.content
-            }
+            value={isEdit ? inputs.content || data?.fetchBoard?.contents || '' : inputs.content}
           />
           {/* <div className={styles.에러메세지_스타일}>{contenterror}</div> */}
         </div>
@@ -156,7 +140,7 @@ export default function BoardsComponentWrite(
                 className={styles.게시물등록_주소인풋_플레이스홀더}
                 type="text"
                 placeholder="01234"
-                value={zonecode || data?.fetchBoard.boardAddress?.zipcode || ""}
+                value={zonecode || data?.fetchBoard.boardAddress?.zipcode || ''}
                 readOnly
               />
               <button
@@ -172,18 +156,14 @@ export default function BoardsComponentWrite(
             className={styles.게시물등록_플레이스홀더}
             type="text"
             placeholder="주소를 입력해 주세요."
-            value={address || data?.fetchBoard.boardAddress?.address || ""}
+            value={address || data?.fetchBoard.boardAddress?.address || ''}
             readOnly
           />
           <input
             className={styles.게시물등록_플레이스홀더}
             type="text"
             placeholder="상세주소"
-            defaultValue={
-              addressDetail ||
-              data?.fetchBoard.boardAddress?.addressDetail ||
-              ""
-            }
+            defaultValue={addressDetail || data?.fetchBoard.boardAddress?.addressDetail || ''}
             onChange={onChangeAddressDetail}
           />
         </div>
@@ -199,7 +179,7 @@ export default function BoardsComponentWrite(
             className={styles.게시물등록_플레이스홀더}
             type="text"
             placeholder="링크를 입력해 주세요"
-            value={youtubeUrl || data?.fetchBoard?.youtubeUrl || ""}
+            value={youtubeUrl || data?.fetchBoard?.youtubeUrl || ''}
             // value={data?.fetchBoard.youtubeUrl ?? ""}는 onChange로 youtubeUrl state를 바꿔도, 화면 value는 계속 data 값이라 타이핑이 안 먹음
             onChange={onChangeYoutubeUrl}
           />
@@ -212,22 +192,15 @@ export default function BoardsComponentWrite(
           <div className={styles.게시물등록_사진첨부}>
             <label>
               <div className={styles.게시물등록_사진첨부_박스}>
-                <input
-                  style={{ display: "none" }}
-                  type="file"
-                  onChange={onChangeFile(0)}
-                />
-                {imageUrls[0] !== "" ? (
+                <input style={{ display: 'none' }} type="file" onChange={onChangeFile(0)} />
+                {imageUrls[0] !== '' ? (
                   <div>
                     <img
                       className={styles.uploadImage}
                       src={`https://storage.googleapis.com/${imageUrls[0]}`}
                       alt="업로드 이미지"
                     />
-                    <CloseCircleFilled
-                      className={styles.closeIcon}
-                      onClick={onClickDeleteImg(0)}
-                    />
+                    <CloseCircleFilled className={styles.closeIcon} onClick={onClickDeleteImg(0)} />
                   </div>
                 ) : (
                   <div className={styles.plusIcon}>
@@ -240,22 +213,15 @@ export default function BoardsComponentWrite(
             </label>
             <label>
               <div className={styles.게시물등록_사진첨부_박스}>
-                <input
-                  style={{ display: "none" }}
-                  type="file"
-                  onChange={onChangeFile(1)}
-                />
-                {imageUrls[1] !== "" ? (
+                <input style={{ display: 'none' }} type="file" onChange={onChangeFile(1)} />
+                {imageUrls[1] !== '' ? (
                   <div>
                     <img
                       className={styles.uploadImage}
                       src={`https://storage.googleapis.com/${imageUrls[1]}`}
                       alt="업로드 이미지"
                     />
-                    <CloseCircleFilled
-                      className={styles.closeIcon}
-                      onClick={onClickDeleteImg(1)}
-                    />
+                    <CloseCircleFilled className={styles.closeIcon} onClick={onClickDeleteImg(1)} />
                   </div>
                 ) : (
                   <div className={styles.plusIcon}>
@@ -267,22 +233,15 @@ export default function BoardsComponentWrite(
             </label>
             <label>
               <div className={styles.게시물등록_사진첨부_박스}>
-                <input
-                  style={{ display: "none" }}
-                  type="file"
-                  onChange={onChangeFile(2)}
-                />
-                {imageUrls[2] !== "" ? (
+                <input style={{ display: 'none' }} type="file" onChange={onChangeFile(2)} />
+                {imageUrls[2] !== '' ? (
                   <div>
                     <img
                       className={styles.uploadImage}
                       src={`https://storage.googleapis.com/${imageUrls[2]}`}
                       alt="업로드 이미지"
                     />
-                    <CloseCircleFilled
-                      className={styles.closeIcon}
-                      onClick={onClickDeleteImg(2)}
-                    />
+                    <CloseCircleFilled className={styles.closeIcon} onClick={onClickDeleteImg(2)} />
                   </div>
                 ) : (
                   <div className={styles.plusIcon}>
@@ -302,13 +261,13 @@ export default function BoardsComponentWrite(
             onClick={isEdit ? onClickEdit : onClickSignup}
             disabled={isEdit ? false : 등록버튼비활성화}
           >
-            {props.isEdit ? "수정" : "등록"}하기
+            {props.isEdit ? '수정' : '등록'}하기
           </button>
         </div>
       </div>
       <Modal
         title="우편번호 검색"
-        closable={{ "aria-label": "Custom Close Button" }}
+        closable={{ 'aria-label': 'Custom Close Button' }}
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}

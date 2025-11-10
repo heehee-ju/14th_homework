@@ -10,7 +10,7 @@
 
 ==============================================
 
-조건-피그마) 활용할MCP: CursorTalkToFigmaMCP(채널명: xu7tqm5i)
+조건-피그마) 활용할MCP: CursorTalkToFigmaMCP(채널명: p0we18y7)
 
 조건-피그마) 구현될 컴포넌트 노드ID(recommend 영역): 285:31932
 조건-피그마) 구현될 컴포넌트 노드ID(advertisement 영역): 285:31937
