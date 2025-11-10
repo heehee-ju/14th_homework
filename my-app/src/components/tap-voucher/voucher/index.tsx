@@ -19,7 +19,7 @@ export default function Voucher() {
           <div className={styles.recommendCardImage}>
             <div className={styles.recommendCardImageBg}>
               <Image
-                src="/images/a.png"
+                src="/images/voucher_list.png"
                 alt="포항 숙소"
                 width={628}
                 height={628}
@@ -28,7 +28,7 @@ export default function Voucher() {
             </div>
             <div className={styles.recommendCardTop}>
               <div className={styles.bookmark}>
-                <Image src="/icons/bookmark@2x.png" alt="북마크" width={24} height={24} />
+                <Image src="/icons/bookmark.png" alt="북마크" width={24} height={24} />
                 <span className={styles.bookmarkCount}>24</span>
               </div>
             </div>
@@ -66,7 +66,7 @@ export default function Voucher() {
             </div>
             <div className={styles.recommendCardTop}>
               <div className={styles.bookmark}>
-                <Image src="/icons/bookmark@2x.png" alt="북마크" width={24} height={24} />
+                <Image src="/icons/bookmark.png" alt="북마크" width={24} height={24} />
                 <span className={styles.bookmarkCount}>24</span>
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function Voucher() {
       <div className={styles.advertisement}>
         <div className={styles.advertisementImage}>
           <Image
-            src="/images/Solitary Contemplation Beneath Nature's Arch 1.png"
+            src="/images/adImg.png"
             alt=""
             width={456}
             height={240}
@@ -140,21 +140,23 @@ export default function Voucher() {
       {/* searchbar 영역 */}
       <div className={styles.searchbar}>
         <div className={styles.searchbarContent}>
-          <div className={styles.datepicker}>
-            <Image src="/icons/icon/outline/calendar.png" alt="달력" width={24} height={24} />
-            <div className={styles.datepickerText}>
-              <span>YYYY.MM.DD</span>
-              <span>-</span>
-              <span>YYYY.MM.DD</span>
+          <div className={styles.searchbarGroup}>
+            <div className={styles.datepicker}>
+              <Image src="/icons/calendar.png" alt="달력" width={24} height={24} />
+              <div className={styles.datepickerText}>
+                <span>YYYY.MM.DD</span>
+                <span>-</span>
+                <span>YYYY.MM.DD</span>
+              </div>
             </div>
+            <div className={styles.searchInput}>
+              <Image src="/icons/search@2x.png" alt="검색" width={24} height={24} />
+              <input type="text" placeholder="제목을 검색해 주세요." />
+            </div>
+            <button className={styles.searchButton}>
+              <span>검색</span>
+            </button>
           </div>
-          <div className={styles.searchInput}>
-            <Image src="/icons/search@2x.png" alt="검색" width={24} height={24} />
-            <input type="text" placeholder="제목을 검색해 주세요." />
-          </div>
-          <button className={styles.searchButton}>
-            <span>검색</span>
-          </button>
           <button className={styles.sellButton}>
             <Image src="/icons/voucher_sell.png" alt="" width={24} height={24} />
             <span>숙박권 판매하기</span>
@@ -227,7 +229,7 @@ export default function Voucher() {
                 className={styles.productCardImageBg}
               />
               <div className={styles.productBookmark}>
-                <Image src="/icons/bookmark@2x.png" alt="북마크" width={24} height={24} />
+                <Image src="/icons/bookmark.png" alt="북마크" width={24} height={24} />
                 <span>24</span>
               </div>
             </div>
