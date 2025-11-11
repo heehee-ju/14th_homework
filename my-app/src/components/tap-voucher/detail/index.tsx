@@ -16,9 +16,8 @@ export default function VoucherDetail() {
       <div className={styles.gap}></div>
       <div className={styles.voucherLocation}></div>
       <div className={styles.gap}></div>
-      <div className={styles.productList}></div>
+      <div className={styles.question}></div>
       <div className={styles.gap}></div>
     </div>
   );
 }
-

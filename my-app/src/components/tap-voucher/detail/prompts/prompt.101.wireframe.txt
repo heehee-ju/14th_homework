@@ -9,13 +9,13 @@
 
 ==============================================
 
-조건-파일경로) 구현될 TSX 파일경로: src/components/mypage/index.tsx
-조건-파일경로) 구현될 CSS 파일경로: src/components/mypage/styles.module.css
+조건-파일경로) 구현될 TSX 파일경로: src/components/tap-voucher/detail/index.tsx
+조건-파일경로) 구현될 CSS 파일경로: src/components/tap-voucher/detail/styles.module.css
 
 ==============================================
 
 핵심요구사항) 완성된 컴포넌트를 페이지에서 import하여 연결시킬 것.
-                - 연결될 경로: src/app/mypage/page.tsx
+                - 연결될 경로: src/app/voucher/detail/page.tsx
 
 핵심요구사항) HTML과 flexbox를 활용한 와이어프레임 구조만 만들어낼 것.
 
@@ -24,15 +24,17 @@
 핵심요구사항) 각 영역은 아래의 수치값을 그대로 반영할 것. (단위: px)
 
                 - {gap}: 1280 x 40
-                - title: 1280 x 36
-                - {gap}: 1280 x 40
-                - userInfo: 1280 x 332
-                - {gap}: 1280 x 40
-                - buttonTabs: 1280 x 40
+                - title: 1280 x 96
                 - {gap}: 1280 x 24
-                - searchbar: 1280 x 48
-                - {gap}: 1280 x 24
-                - productList: 1280 x 656
+                - voucherInfo: 1280 x 480
+                - {gap}: 1280 x 40
+                - {gap}: 1280 x 40
+                - voucherDetail: 1280 x 40
+                - {gap}: 1280 x 40
+                - {gap}: 1280 x 40
+                - voucherLocation: 1280 x 48
+                - {gap}: 1280 x 40
+                - question: 1280 x 316
                 - {gap}: 1280 x 40
 
                 
