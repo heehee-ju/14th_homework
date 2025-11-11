@@ -204,7 +204,11 @@ export default function VoucherDetail() {
         </div>
         <div className={styles.questionForm}>
           <div className={styles.questionInput}>
-            <p className={styles.inputPlaceholder}>문의사항을 입력해 주세요.</p>
+            <textarea
+              className={styles.textarea}
+              placeholder="문의사항을 입력해 주세요."
+              maxLength={100}
+            />
             <p className={styles.inputCount}>0/100</p>
           </div>
           <button className={styles.submitButton}>문의 하기</button>
